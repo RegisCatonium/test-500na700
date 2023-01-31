@@ -1,0 +1,363 @@
+@import config
+
+// стили
+
+.header
+	width: 100%
+	padding: 7rem 0 7.8rem
+	position: fixed
+	z-index: 1000
+	background-color: $bgColor
+
+.icon-logo::before
+	color: $accent
+	font-size: 5rem
+.nav
+	max-width: 130rem
+	padding: 0 3rem
+	display: flex
+	align-items: center
+	gap: 21.2rem
+	margin: 0 auto
+
+.nav-menu
+	display: flex
+	gap: 3rem
+	z-index: 100
+	input
+		display: none
+		pointer-events: none
+	&__item
+		padding: 2rem 0
+		border-bottom: 3px solid transparent
+		position: relative
+		&.active
+			border-bottom: 3px solid #fff
+	label 
+		&__link
+			font-size: 1.6rem
+			font-weight: 500
+			margin: 0
+			color: #fff
+			transition: all .3s linear
+			&:hover
+				color: $accent
+		&:hover ~ .sub-menu
+			transform: translateY(0)
+			opacity: 1
+// -- nav-menu
+
+.sub-menu
+	display: flex
+	flex-direction: column
+	flex-wrap: wrap
+	gap: 3rem
+	max-height: 12rem
+	position: absolute
+	top: 14rem
+	left: 0
+	z-index: 10
+	opacity: 0
+	transform: translateY(-5rem)
+	transition: all 1s .2s ease
+	&__item
+		width: 22rem
+	&__link
+		font-size: 1.6rem
+		font-weight: 500
+// -- sub-menu
+.sub-mask
+	width: 100%
+	height: 0
+	background-color: $bgColor
+	position: absolute
+	z-index: 9
+	transition: all 1s .15s ease
+	pointer-events: none
+	&.active
+		height: 28.8rem
+		// opacity: 1
+// -- sub-mask
+
+// маска при открытии меню
+.page__mask
+	display: none
+	width: 100vw
+	height: 100vh
+	background-color: rgba(#000, .40)
+	position: absolute
+	left: 0
+	top: 0
+	animation: mask .70s linear
+	z-index: 100
+@keyframes mask
+	0%
+		background-color: rgba(#000, 0)
+	100%
+		background-color: rgba(#000, .40)
+// бургер меню
+.burger
+	display: none
+	width: 3.4rem
+	height: 2.4rem
+	padding: 0
+	position: relative
+	background: none
+	border: none
+	font-size: 0
+	color: transparent
+	z-index: 1000
+	transition: opacity .2s ease
+	&__item
+		display: block
+		width: 100%
+		height: 2px
+		background-color: #fff
+		z-index: -1
+		position: absolute
+		transform: translateY(-50%)
+		transition: opacity .1s linear, transform .3s linear
+		&_top
+			top: 0
+		&_center
+			top: calc( 50% - 1px )
+		&_bottom
+			bottom: 0%
+
+#burger-checkbox
+	display: none
+	&:checked ~ .header
+		.burger__item_center
+			opacity: 0
+		.burger__item_top, .burger__item_bottom
+			top: 50%
+		.burger__item_top
+			transform: rotate(135deg)
+		.burger__item_bottom
+			transform: rotate(-135deg)
+		& .nav .nav-menu
+			transform: translateX(0)
+// -- бургер
+
+.slider
+	width: 100%
+	padding: 21.2rem 17.1rem 10rem 
+	position: relative
+
+	&__item
+		height: 65rem
+		background-size: cover
+		background-repeat: no-repeat
+		background-image: var(--url)
+		position: relative
+	&__title
+		font-size: 8rem
+		font-weight: 500
+		line-height: 8.5rem
+		letter-spacing: -0.03em
+		position: absolute
+		bottom: 15.9rem
+		left: 5rem
+	&__text
+		max-width: 52.4rem
+		margin: 0
+		letter-spacing: .01em
+		position: absolute
+		bottom: 9.1rem
+		left: 5rem
+	&__arr
+		position: absolute
+		top: auto
+		bottom: 2.5%
+		left: 43%
+		&:hover::after
+			color: $accent
+			transform: scale(1.2)
+		&::after
+			content: '\e900'
+			font-family: $fontIcon
+			font-size: 2.35rem
+			color: #fff
+			transition: all .3s ease
+	&__arr-next
+		left: auto
+		right: 43%
+		&:hover::after
+			transform: rotate(180deg) scale(1.2) 
+		&::after
+			transform: rotate(180deg)
+// -- slider
+
+.container
+	max-width: 130rem
+	margin: 0 auto
+	padding: 7rem 3rem 4.3rem
+
+.title
+	font-size: 8rem
+	font-weight: 500
+.faq
+	display: flex
+	padding-top: 5rem
+	gap: 9.8rem
+.accordion
+	width: 100%
+	border-top: 1px solid #fff
+
+	&__tab
+		padding: 3rem 0
+		border-bottom: 1px solid rgba(#fff, .2)
+		position: relative
+
+		&-title
+			font-size: 2.4rem
+			line-height: 3.5rem
+			font-weight: 400
+			cursor: pointer
+
+		& input
+			appearance: none
+			display: none
+			&:checked ~ .accordion__tab-content
+				max-height: 40vh
+		&-content
+			max-height: 0
+			overflow: hidden
+			transition: 1s
+			transition: max-height 2s linear
+			& p
+				margin-top: 3rem
+// -- accordion
+
+.news
+	width: 100%
+	padding: 8rem 0 10.9rem
+	& .title
+		margin-bottom: 5rem
+	&__content
+		display: flex
+		justify-content: space-between
+		flex-wrap: wrap
+
+	&__tab
+		width: 40rem
+		height: 37rem
+		margin-bottom: 5rem
+		transition: transform .3s linear
+		&:hover
+			transform: translateY(-2rem)
+		& a
+			font-size: 0
+	&__img
+		width: 100%
+	&__wrap
+		padding-top: 3rem
+	&__title
+		margin-bottom: 1rem
+		font-size: 1.6rem
+		font-weight: 500
+		line-height: 2.37rem
+		// color: #000103
+	&__text
+		margin: 0
+		font-size: 1.4rem
+		font-weight: 500
+		line-height: 2.07rem
+
+		// ограничение кол-ва строк, многоточие в конце строки зависит от шрифта
+		display: -webkit-box
+		-webkit-line-clamp: 2
+		-webkit-box-orient: vertical
+		overflow: hidden
+// --.news
+
+.feedback
+	width: 100%
+	background-color: $bgWhite
+	color: $textBlack
+
+.form
+	// max-width: 124rem
+	max-width: 130rem
+	margin: 0 auto
+	// padding: 5rem 0
+	padding: 5rem 3rem
+	&__text
+		max-width: 40rem
+		margin-top: 3rem
+		margin-bottom: 1.5rem
+		line-height: 2rem
+
+	&__content
+		max-width: 90rem
+		display: flex
+		flex-wrap: wrap
+		gap: 2rem
+	
+	&__input
+		width: 40rem
+		padding: 1.4rem 1.5rem 1.6rem 2rem
+		border: 1px solid rgba(#000, 0.4)
+		border-radius: 1rem
+		outline: none
+		transition: all .2s ease
+		&::placeholder
+			font-size: 1.4rem
+			font-weight: 400
+			line-height: 2rem
+			color: rgba(#000, 0.6)
+		&:focus
+			font-size: 1.6rem
+			color: $textBlack
+			border: 1px solid #000
+
+	&__btn
+		background-color: transparent
+		padding: 1.4rem 2rem 1.6rem
+		font-size: 1.6rem
+		line-height: 2rem
+		border: 1px solid rgba(#000, 0.4)
+		border-radius: 1rem
+		transition: all .2s ease
+		&:hover
+			background-color: $accent
+			border: 1px solid $accent
+// -- form
+
+.footer
+	width: 100%
+	padding: 5rem 0 8rem
+	background-color: #312F35
+.wrapper
+	max-width: 130rem
+	padding: 0 3rem
+	margin: 0 auto
+	display: flex
+	gap: 12rem
+.description
+	max-width: 40rem
+	&__title
+		font-size: 1.6rem
+		font-weight: 500
+		margin-bottom: 1rem
+	&__text, &__link
+		font-size: 1.4rem
+		line-height: 2.1rem
+		font-weight: 500
+	&__text
+		margin-bottom: 2.5rem
+	&__link
+		text-decoration-line: underline
+
+.social
+	display: flex
+	gap: 3rem
+	& i
+		font-size: 2.8rem
+		&::before
+			color: #fff
+			transition: all .3s ease
+		&:hover::before
+			color: $accent
+
+@import media

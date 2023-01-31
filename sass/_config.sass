@@ -1,0 +1,54 @@
+// USER VARIABLES SECTION
+$accent: #75FF77
+
+$textColor: #fff
+$textBlack: #0B0A0D
+
+$bgColor: #0B0A0D
+$bgWhite: #fff
+$fontSize: 1.6rem // Body Font Size
+$fontText: mplus1p, sans-serif // User Font Family
+$fontIcon: icomoon // иконочный шрифт, сделан из иконок используеемых в макете
+
+// FONTS LOAD SECTION
+
+@mixin font($fname, $fstyle, $fweight, $furl)
+	@font-face
+		font-family: $fname
+		font-style: $fstyle
+		font-weight: $fweight
+		src: url($furl) format('woff2')
+
+@include font('mplus1p', normal, 400, '../fonts/mplus1p/MPLUS1p-Regular.ttf')
+@include font('mplus1p', normal, 500, '../fonts/mplus1p/MPLUS1p-Medium.ttf')
+
+
+// GENERAL DOCUMENT STYLES
+*
+   box-sizing: border-box
+
+html, body
+	overflow-x: hidden
+html
+	font-size: 10px
+	// font-size: calc(100vw/1600*10)
+
+body
+	font-family: $fontText
+	font-size: $fontSize
+	color: $textColor
+	background-color: $bgColor
+	min-width: 32rem
+	position: relative
+
+a
+	color: #fff
+	text-decoration: none
+
+h1, h2, h3, h4, h5, p
+	margin: 0
+p
+	line-height: 1.5
+
+.no-scroll
+	overflow: hidden
