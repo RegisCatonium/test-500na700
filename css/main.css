@@ -2,14 +2,14 @@
   font-family: "mplus1p";
   font-style: normal;
   font-weight: 400;
-  src: url("../fonts/mplus1p/MPLUS1p-Regular.ttf") format("woff2");
+  src: url("../fonts/mplus1p/mplus1p-regular.ttf") format("woff2");
 }
 
 @font-face {
   font-family: "mplus1p";
   font-style: normal;
   font-weight: 500;
-  src: url("../fonts/mplus1p/MPLUS1p-Medium.ttf") format("woff2");
+  src: url("../fonts/mplus1p/mplus1p-medium.ttf") format("woff2");
 }
 
 * {
@@ -618,14 +618,14 @@ p {
   font-family: "mplus1p";
   font-style: normal;
   font-weight: 400;
-  src: url("../fonts/mplus1p/MPLUS1p-Regular.ttf") format("woff2");
+  src: url("../fonts/mplus1p/mplus1p-regular.ttf") format("woff2");
 }
 
 @font-face {
   font-family: "mplus1p";
   font-style: normal;
   font-weight: 500;
-  src: url("../fonts/mplus1p/MPLUS1p-Medium.ttf") format("woff2");
+  src: url("../fonts/mplus1p/mplus1p-medium.ttf") format("woff2");
 }
 
 * {
