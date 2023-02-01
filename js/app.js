@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	// фон для сабменю
 	const subMask = document.querySelector('.sub-mask')
-	const linkMenu = document.querySelectorAll('.nav-menu__link')
+	const linkMenu = document.querySelectorAll('.nav-menu')
 
 	linkMenu.forEach(item => {
 		item.addEventListener('mouseover', () => {

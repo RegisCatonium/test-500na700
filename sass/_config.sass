@@ -7,7 +7,7 @@ $textBlack: #0B0A0D
 $bgColor: #0B0A0D
 $bgWhite: #fff
 $fontSize: 1.6rem // Body Font Size
-$fontText: mplus1p, sans-serif // User Font Family
+$fontText: mplus1p, 'M PLUS 1p', sans-serif // User Font Family
 $fontIcon: icomoon // иконочный шрифт, сделан из иконок используеемых в макете
 
 // FONTS LOAD SECTION
@@ -17,7 +17,8 @@ $fontIcon: icomoon // иконочный шрифт, сделан из икон�
 		font-family: $fname
 		font-style: $fstyle
 		font-weight: $fweight
-		src: url($furl) format('woff2')
+		// src: url($furl) format('woff2')
+		src: url($furl) format('ttf')
 
 @include font('mplus1p', normal, 400, '../fonts/mplus1p/mplus1p-regular.ttf')
 @include font('mplus1p', normal, 500, '../fonts/mplus1p/mplus1p-medium.ttf')
@@ -44,7 +45,7 @@ a
 	color: #fff
 	text-decoration: none
 
-h1, h2, h3, h4, h5, p
+h1, h2, h3, h4, h5, p, ul
 	margin: 0
 p
 	line-height: 1.5
